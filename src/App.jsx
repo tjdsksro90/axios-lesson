@@ -23,7 +23,7 @@ function App() {
   const onSubmitHandler = async () => {
     // 버튼 클릭 시, input에 들어있는 값(state)을 이용하여 DB에 저장(post 요청)
     // axios.post("http://localhost:4000/todos", inputValue);
-    const response = api.post("/todos", inputValue);
+    const response = await api.post("/todos", inputValue);
     const newTodo = response.data;
     setTodos([...todos, newTodo]);
   };
